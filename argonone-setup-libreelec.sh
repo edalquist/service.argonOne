@@ -207,7 +207,7 @@ echo '[Service]' >> $daemonfanservice
 echo 'Type=simple' >> $daemonfanservice
 echo "Restart=always" >> $daemonfanservice
 echo "RemainAfterExit=true" >> $daemonfanservice
-echo "ExecStart=/usr/bin/python $powerbuttonscript" >> $daemonfanservice
+echo "ExecStart=/bin/sh -c \". /etc/profile; exec /usr/bin/python $powerbuttonscript\"" >> $daemonfanservice
 echo '[Install]' >> $daemonfanservice
 echo "WantedBy=multi-user.target" >> $daemonfanservice
 
